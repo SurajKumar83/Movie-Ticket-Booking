@@ -1,0 +1,319 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket</title>
+    <!-- <link rel="stylesheet" href="Movie_Ticket.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        background-image: url('https://imgs.search.brave.com/tG7r8t5WPYk2Zfow5aq56bZVqJ5GaDXcyQOsrFMFRTA/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9maWxl/cy4xMjNmcmVldmVj/dG9ycy5jb20vd3At/Y29udGVudC9vcmln/aW5hbC8xMTkyODQt/YWJzdHJhY3QtYnJv/d24tYmFja2dyb3Vu/ZC12ZWN0b3ItYXJ0/LmpwZw');
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        overflow: auto;
+    }
+
+    .container .box1 iframe {
+        box-shadow: 2px 2px 30px rgba(240, 17, 17, 0.5);
+        opacity: 0.8;
+    }
+
+    .container .box1 iframe:hover {
+        opacity: 1;
+    }
+
+    .container .box2 #table1 {
+
+        display: flex;
+        color: #e8c573;
+        border-collapse: separate;
+    }
+
+    .container .box2 #table1 #tbody1 {
+        line-height: 20px;
+        margin-right: 20px;
+        border-spacing: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .container .box2 #table1 #tbody2 {
+        line-height: 20px;
+        margin-right: 20px;
+        border-spacing: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .container .box2 #table1 #tbody3 {
+        line-height: 20px;
+        border-spacing: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .container .box2 #table1 #tbody4 {
+        line-height: 20px;
+        margin-left: 20px;
+        border-spacing: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .container .box2 #table1 tr td {
+        cursor: pointer;
+        background-color: darkgray;
+    }
+
+    .container .box2 #table1 #tbody1 tr td {
+        background-color: #e8c573;
+    }
+
+    .container .box2 #table1 #tbody1 tr td:hover {
+
+        color: black;
+        cursor: default;
+    }
+
+    .container .box2 #table1 tr td {
+        border: 2px solid rgb(150, 150, 153);
+        padding: 5px 10px;
+        font-weight: 600;
+        border-radius: 4px;
+        color: black;
+        border-top-left-radius: 40%;
+        border-top-right-radius: 40%;
+    }
+
+    .box3 {
+        margin-top: 20px;
+        display: flex;
+
+    }
+
+    .box3 a {
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        margin-left: 60px;
+    }
+
+    .box3 a span {
+        margin-left: 30px;
+        color: black;
+        font-size: 20px;
+    }
+
+    .box3 #na i {
+        font-size: 40px;
+        color: darkgray;
+
+    }
+
+    .box3 #selected i {
+        font-size: 40px;
+        color: chartreuse;
+
+    }
+
+    .box3 #occupied i {
+        font-size: 40px;
+        color: darkred;
+    }
+
+    .box3 #total {
+        padding: 0 10px;
+        font-size: 40px;
+        border-radius: 4px;
+        border: 1px solid darkred;
+        background-color: #e8c573;
+    }
+
+    .box3 #book {
+        padding: 0 10px;
+        font-size: 25px;
+        border-radius: 4px;
+        color: blueviolet;
+        border: 1px solid darkred;
+        background-color: #e8c573;
+    }
+
+    .container .desc {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .container .desc span {
+        color: royalblue;
+        font-weight: bold;
+        font-size: 30px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wwGbt878_g0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        </div>
+        <div class="box2">
+            <table id="table1">
+                <tbody id="tbody1">
+                    <tr>
+                        <td>E</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                    </tr>
+                </tbody>
+                <tbody id="tbody2">
+                    <tr>
+                        <td onclick="increase(this)">1</td>
+                        <td onclick="increase(this)">2</td>
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">1</td>
+                        <td onclick="increase(this)">2</td>
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">1</td>
+                        <td onclick="increase(this)">2</td>
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">1</td>
+                        <td onclick="increase(this)">2</td>
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">1</td>
+                        <td onclick="increase(this)">2</td>
+                    </tr>
+                </tbody>
+                <tbody id="tbody3">
+                    <tr>
+                        <td onclick="increase(this)">3</td>
+                        <td onclick="increase(this)">4</td>
+                        <td onclick="increase(this)">5</td>
+                        <td onclick="increase(this)">6</td>
+                        <td onclick="increase(this)">7</td>
+                        <td onclick="increase(this)">8</td>
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">3</td>
+                        <td onclick="increase(this)">4</td>
+                        <td onclick="increase(this)">5</td>
+                        <td onclick="increase(this)">6</td>
+                        <td onclick="increase(this)">7</td>
+                        <td onclick="increase(this)">8</td>
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">3</td>
+                        <td onclick="increase(this)">4</td>
+                        <td onclick="increase(this)">5</td>
+                        <td onclick="increase(this)">6</td>
+                        <td onclick="increase(this)">7</td>
+                        <td onclick="increase(this)">8</td>
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">3</td>
+                        <td onclick="increase(this)">4</td>
+                        <td onclick="increase(this)">5</td>
+                        <td onclick="increase(this)">6</td>
+                        <td onclick="increase(this)">7</td>
+                        <td onclick="increase(this)">8</td>
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">3</td>
+                        <td onclick="increase(this)">4</td>
+                        <td onclick="increase(this)">5</td>
+                        <td onclick="increase(this)">6</td>
+                        <td onclick="increase(this)">7</td>
+                        <td onclick="increase(this)">8</td>
+                    </tr>
+                </tbody>
+                <tbody id="tbody4">
+                    <tr >
+
+                        <td onclick="increase(this)">9</td>
+                        <td onclick="increase(this)">10</td>
+
+                    </tr>
+                    <tr>
+
+                        <td onclick="increase(this)">9</td>
+                        <td onclick="increase(this)">10</td>
+
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">9</td>
+                        <td onclick="increase(this)">10</td>
+
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">9</td>
+                        <td onclick="increase(this)">10</td>
+
+                    </tr>
+                    <tr>
+                        <td onclick="increase(this)">9</td>
+                        <td onclick="increase(this)">10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box3">
+            <a id="na" href="#"><i class="fa-solid fa-square"></i><span>N/A</span></a>
+            <a id="selected" href="#"><i class="fa-solid fa-square"></i> <span>Selected</span></a>
+            <a id="occupied" href="#"><i class="fa-solid fa-square"></i> <span>Occupied</span></a>
+            <a id="total" href="#">₹<span>0.00</span></a>
+            <a id="book" href="#">Book Now</a>
+        </div>
+        <p class="desc">Each Ticket costs ₹<span id="desc">200.00</span> only</p>
+    </div>
+    <script>
+        let price = document.getElementById("total").children[0];
+        console.log(price);
+        function increase(e) {
+            style = window.getComputedStyle(e),
+                bgc = style.getPropertyValue('background-color');
+                
+            if (bgc == "rgb(169, 169, 169)") {
+                e.style.backgroundColor = "rgb(127, 255, 0)";
+                let num1 = Number(price.textContent) + 200.00;
+                price.textContent = num1.toString();
+            }
+            else if(bgc == "rgb(127, 255, 0)")
+            {
+                e.style.backgroundColor = "rgb(169, 169, 169)";
+                let num2=Number(price.textContent) -200.00;
+                price.textContent =num2.toString();
+            }
+        }
+    </script>
+</body>
+
+</html>
