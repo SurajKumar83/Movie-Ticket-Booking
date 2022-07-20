@@ -290,13 +290,13 @@
             <a id="selected" href="#"><i class="fa-solid fa-square"></i> <span>Selected</span></a>
             <a id="occupied" href="#"><i class="fa-solid fa-square"></i> <span>Occupied</span></a>
             <a id="total" href="#">₹<span>0.00</span></a>
-            <a id="book" href="#book">Book Now</a>
+            <a id="book" href="#book" onclick="message(this)">Book Now</a>
         </div>
         <p class="desc">Each Ticket costs ₹<span id="desc">200.00</span> only</p>
     </div>
     <script>
         let price = document.getElementById("total").children[0];
-         let Booked=document.getElementById("book");
+        let Booked=document.getElementById("book");
         function increase(e) {
             if(Booked.textContent=="Booked"){
                 Booked.textContent="Book Now";
@@ -308,6 +308,7 @@
                 e.style.backgroundColor = "rgb(127, 255, 0)";
                 let num1 = Number(price.textContent) + 200.00;
                 price.textContent = num1.toString();
+                
             }
             else if(bgc == "rgb(127, 255, 0)")
             {
@@ -316,10 +317,12 @@
                 price.textContent =num2.toString();
             }
         }
-         function message(e){
+        function message(e){
             e.textContent="Booked";
+        
             alert("Congratulation 🥳🥳! You Can enjoy your movie.");
         }
+
     </script>
 </body>
 
