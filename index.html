@@ -296,8 +296,11 @@
     </div>
     <script>
         let price = document.getElementById("total").children[0];
-        console.log(price);
+         let Booked=document.getElementById("book");
         function increase(e) {
+            if(Booked.textContent=="Booked"){
+                Booked.textContent="Book Now";
+            }
             style = window.getComputedStyle(e),
                 bgc = style.getPropertyValue('background-color');
                 
@@ -312,6 +315,11 @@
                 let num2=Number(price.textContent) -200.00;
                 price.textContent =num2.toString();
             }
+        }
+         function message(e){
+            e.textContent="Booked";
+        
+            alert("Congratulation 🥳🥳! You Can enjoy your movie.")
         }
     </script>
 </body>
